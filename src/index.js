@@ -1,15 +1,10 @@
-import express from 'express'
-import './db/mongoose.js'
-import userRouter from './routers/user.js'
-import taskRouter from './routers/task.js'
+//to run the app in development mode, we still use index.js
 
-const app = express()
-const port = process.env.PORT || 3000
+//to avoid duplicacy import app.js
+import app from "./app.js";
 
-app.use(express.json())
-app.use(userRouter)
-app.use(taskRouter)
+const port = process.env.PORT || 3000;
 
 app.listen(port, () => {
-    console.log('server is up on ' + port)
-})
+  console.log("server is up on " + port);
+});
